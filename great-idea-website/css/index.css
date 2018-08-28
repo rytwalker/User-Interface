@@ -149,7 +149,7 @@ h5 {
   margin-bottom: 15px;
 }
 
-/* Your code starts here! */
+/* BASE STYLES */
 h2 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -159,6 +159,16 @@ h2 {
 h2,
 p {
   line-height: 1.4;
+}
+
+p a,
+p a:visited {
+  color: #8ad4ff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
 }
 
 .container {
@@ -197,7 +207,6 @@ p {
 }
 
 /* NAVIGATION */
-
 .navigation {
   display: inline-block;
   vertical-align: top;
@@ -216,18 +225,18 @@ p {
   /* border: 1px solid orange; */
 }
 
-.navigation a,
-.navigation a:visited {
+.nav-links a,
+.nav-links a:visited {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   margin-right: 120px;
-  color: #999;
+  color: #000;
   font-size: 18px;
   transition: all 300ms;
 }
 
-.navigation a:hover {
-  color: #ccc;
+.nav-links a:hover {
+  color: #999;
   /* border-bottom: 1px solid #999; */
 }
 
@@ -243,7 +252,6 @@ p {
 }
 
 /* HEADER */
-
 .header {
   padding: 140px 0 50px;
   border-bottom: 1px solid #000;
@@ -254,6 +262,7 @@ p {
   width: 50%;
   margin: 0 auto;
   padding: 22.8px 0;
+  animation: fromleft 500ms ease-in-out;
 }
 
 .heading-primary {
@@ -262,6 +271,7 @@ p {
 
 .header-image-container {
   text-align: center;
+  animation: fromright 500ms ease-in-out;
 }
 
 .cta-button {
@@ -278,12 +288,6 @@ p {
   background: #dcf2fd;
 }
 
-/* BOTTOM CONTENT */
-.bottom-content {
-  padding-bottom: 50px;
-  border-bottom: 1px solid black;
-}
-
 /* IMAGES */
 .middle-img-container {
   margin-bottom: 50px;
@@ -298,10 +302,17 @@ p {
   width: 100%;
 }
 
+/* BOTTOM CONTENT */
+.bottom-content {
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+}
+
 /* CONTACT */
 .contact {
   font-size: 16px;
 }
+
 .contact a,
 .contact a:visited {
   color: #000;
@@ -320,7 +331,12 @@ p {
   padding-bottom: 20px;
 }
 
-/* FEATURE SECTION */
+/* FEATURE PAGE */
+.main-features {
+  opacity: 0;
+  animation: fadein 500ms ease-in 200ms forwards;
+}
+
 .features {
   padding: 140px 0 50px;
   text-align: center;
@@ -340,7 +356,6 @@ p {
 }
 
 /* LINKS SECTION */
-
 .links {
   text-align: center;
 }
@@ -359,4 +374,38 @@ p {
 .link-list a:hover,
 .social-list a:hover {
   color: #cbecff;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fromleft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  80% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromright {
+  0% {
+    transform: translateX(1000px);
+  }
+  80% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
